@@ -22,7 +22,10 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    namespace "ru.spchief.flutter_login_yandex"
+    if (project.android.hasProperty("namespace")) {
+      namespace "ru.spchief.flutter_login_yandex"
+    }
+    
     compileSdkVersion 31
 
     compileOptions {
